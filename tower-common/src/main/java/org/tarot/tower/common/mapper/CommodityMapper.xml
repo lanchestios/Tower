@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.tarot.tower.common.dao.CommodityMapper">
+  <resultMap id="BaseResultMap" type="org.tarot.tower.common.entity.Commodity">
+    <id column="commodity_id" jdbcType="BIGINT" property="commodityId" />
+    <result column="commodity_name" jdbcType="VARCHAR" property="commodityName" />
+    <result column="commodity_price" jdbcType="INTEGER" property="commodityPrice" />
+  </resultMap>
+
+  <sql id="Base_Column_List">
+    commodity_id, commodity_name, commodity_price
+  </sql>
+
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from commodity
+    where commodity_id = #{commodityId,jdbcType=BIGINT}
+  </select>
+
+</mapper>

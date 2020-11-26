@@ -1,0 +1,11 @@
+server:
+  port: 9091
+zuul:
+  # 配置网关：localhost:9091
+  # 访问路由：localhost:9091/custom_api_1/....(custom api)
+  #         localhost:9091/custom_api_2/....(custom api)
+  routes:
+    custom_api_1:
+      url: http://127.0.0.1:8080
+#    custom_api_2:
+#      url: http://127.0.0.1:9001

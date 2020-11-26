@@ -1,0 +1,18 @@
+server:
+  port: 9001
+spring:
+  application:
+    name: tower-actuator-client
+eureka:
+  client:
+    service-url:
+      defaultZone: http://127.0.0.1:9090/eureka
+#Actuator配置：暴露敏感路径，默认情况下，敏感路径并不暴露
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*" # 暴露xxx端点，如需暴露多个，用,分隔；如需暴露所有端点，用'*'
+  endpoint:
+    health:
+      show-details: ALWAYS # 是否展示健康检查详情

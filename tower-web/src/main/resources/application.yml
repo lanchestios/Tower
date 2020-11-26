@@ -1,0 +1,32 @@
+spring:
+  datasource:
+    # 数据源相关配置
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/gecko?useSSL=false&serverTimezone=UTC&characterEncoding=utf-8
+    username: root
+    password: 123456
+  jpa:
+    database: MYSQL # 指定DBMS
+    show-sql: true # 是否记录SQL执行日志
+    hibernate: # hibernate ddl-auto(create, create-drop, update)
+      ddl-auto: none # 开启后根据实体类自动创建表结构
+      naming:
+        physical-strategy: org.springframework.boot.orm.jpa.hibernate.SpringPhysicalNamingStrategy
+    properties:
+      hibernate.dialect: org.hibernate.dialect.MySQL5Dialect
+#  devtools:
+#    restart:
+#      enabled: true
+mybatis: # MyBatis 相关配置
+  mapper-locations: classpath:org/tarot/tower/common/mapper/*.xml # mapper.xml 扫描路径
+  configuration:
+    map-underscore-to-camel-case: true # 下划线转为驼峰
+pagehelper:
+  helperDialect: mysql
+  reasonable: true
+  supportMethodsArguments: true
+  params: count=countSql
+#logging:
+#  file:
+#    path: C:\Users\wangzihao\Desktop # 配置后进行日志输出
+#  config: classpath:logback-dev.groovy # 自定义配置文件路径

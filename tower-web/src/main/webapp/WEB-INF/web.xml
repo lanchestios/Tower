@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns="http://java.sun.com/xml/ns/javaee"
+         xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
+         id="WebApp_ID" version="2.5">
+    <display-name>TAROT-TOWER WEB</display-name>
+    <!--
+        Spring Boot 已经移除了 web.xml 文件
+        如果需要添加 Servlet、Filter、Listener为 Spring Bean
+        Spring Boot 有两种方式：
+        口 Servlet3.0 API中的注解 @WebServlet、@WebListener、@ WebFilter用来配置。
+        口 Spring Boot JavaConfig 注解配置 Bean 的方式进行配置。
+    -->
+    <welcome-file-list>
+        <welcome-file>index.jsp</welcome-file>
+    </welcome-file-list>
+</web-app>

@@ -1,0 +1,1 @@
+<h3>This is a foot block</h3>
